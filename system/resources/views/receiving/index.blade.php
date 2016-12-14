@@ -54,7 +54,9 @@
                                     <div class="form-group">
                                         <label for="supplier_id" class="col-sm-4 control-label">{{trans('receiving.supplier')}}</label>
                                         <div class="col-sm-8">
-                                        {!! Form::select('supplier_id', $supplier, Input::old('supplier_id'), array('class' => 'form-control')) !!}
+                                        {!! Form::select('supplier_id', $supplier , Input::old('supplier_id'), array('class' => 'form-control')) !!}
+
+                                        <!-- form select(name,?,?,class ) -->
                                         </div>
                                     </div>
 
@@ -68,9 +70,27 @@
                         </div>
 
                         <table class="table table-bordered">
-                            <tr><th>{{trans('receiving.item_id')}}</th><th>{{trans('receiving.item_name')}}</th><th>{{trans('receiving.cost')}}</th><th>{{trans('receiving.quantity')}}</th><th>{{trans('receiving.total')}}</th><th>&nbsp;</th></tr>
+                            <tr>
+                                <th>{{trans('receiving.item_id')}}</th>
+                                <th>{{trans('receiving.item_name')}}</th>
+                                <th>{{trans('receiving.cost')}}</th>
+                                <th>{{trans('receiving.quantity')}}</th>
+                                <th>{{trans('receiving.total')}}</th>
+                                <th>&nbsp;</th>
+                            </tr>
+
                             <tr ng-repeat="newreceivingtemp in receivingtemp">
-                            <td>@{{newreceivingtemp.item_id}}</td><td>@{{newreceivingtemp.item.item_name}}</td><td>@{{newreceivingtemp.item.cost_price | currency}}</td><td><input type="text" style="text-align:center" autocomplete="off" name="quantity" ng-change="updateReceivingTemp(newreceivingtemp)" ng-model="newreceivingtemp.quantity" size="2"></td><td>@{{newreceivingtemp.item.cost_price * newreceivingtemp.quantity | currency}}</td><td><button class="btn btn-danger btn-xs" type="button" ng-click="removeReceivingTemp(newreceivingtemp.id)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+                                <td>@{{newreceivingtemp.item_id}}</td>
+                                <td>@{{newreceivingtemp.item.item_name}}</td>
+                                <td>@{{newreceivingtemp.item.cost_price | currency}}</td>
+                                <td><input type="text" style="text-align:center" autocomplete="off" name="quantity" ng-change="updateReceivingTemp(newreceivingtemp)" ng-model="newreceivingtemp.quantity" size="2"></td>
+                                <td>@{{newreceivingtemp.item.cost_price * newreceivingtemp.quantity | currency}}</td>
+                                <td>
+                                <button class="btn btn-danger btn-xs" type="button" ng-click="removeReceivingTemp(newreceivingtemp.id)">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+
+                                </button>
+                                </td>
                             </tr>
                         </table>
 

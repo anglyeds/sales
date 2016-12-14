@@ -75,7 +75,7 @@
 
 	<footer class="footer hidden-print">
       <div class="container">
-        <p class="text-muted">You are using <a href="http://tutacare.github.io/tutapos/">TutaPOS</a> v0.8-alpha by <a href="https://twitter.com/tutacare">Irfan Mahfudz Guntur</a>.
+        <p class="text-muted">You are using <a href="http://tutacare.github.io/tutapos/">Synergy Marketing</a> v0.1 by <a href="https://twitter.com/tutacare">Jeffrey Cheong</a>.
         </p>
       </div>
     </footer>

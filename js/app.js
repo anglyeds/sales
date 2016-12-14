@@ -36,7 +36,7 @@
         $scope.sum = function(list) {
             var total=0;
             angular.forEach(list , function(newreceivingtemp){
-                total+= parseFloat(newreceivingtemp.item.cost_price * newreceivingtemp.quantity);
+                total+= parseFloat(newreceivingtemp.cost_price * newreceivingtemp.quantity);
             });
             return total;
         }

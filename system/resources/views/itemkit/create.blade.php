@@ -58,9 +58,20 @@
                         </div>
                            
                         <table class="table table-bordered">
-                            <tr><th>{{trans('itemkit.item_id')}}</th><th>{{trans('itemkit.item_name')}}</th><th>{{trans('itemkit.quantity')}}</th><th>&nbsp;</th></tr>
+                            <tr>
+                                <th>{{trans('itemkit.item_id')}}</th>
+                                <th>{{trans('itemkit.item_name')}}</th>
+                                <th>{{trans('itemkit.quantity')}}</th>
+                                <th>&nbsp;</th>
+                            </tr>
                             <tr ng-repeat="newitemkittemp in itemkittemp">
-                            <td>@{{newitemkittemp.item_id}}</td><td>@{{newitemkittemp.item.item_name}}</td><td><input type="text" style="text-align:center" autocomplete="off" name="quantity" ng-change="updateItemKitTemp(newitemkittemp)" ng-model="newitemkittemp.quantity" size="2"></td><td><button class="btn btn-danger btn-xs" type="button" ng-click="removeItemKitTemp(newitemkittemp.id)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+                                <td>@{{newitemkittemp.item_id}}</td>
+                                <td>@{{newitemkittemp.item.item_name}}</td>
+                                <td><input type="text" style="text-align:center" autocomplete="off" name="quantity" ng-change="updateItemKitTemp(newitemkittemp)" ng-model="newitemkittemp.quantity" size="2"></td>
+                                <td>
+                                    <button class="btn btn-danger btn-xs" type="button" ng-click="removeItemKitTemp(newitemkittemp.id)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                                </td>
                             </tr>
                         </table>
 
