@@ -146,6 +146,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+		'Aws\Laravel\AwsServiceProvider',
 
 	],
 
@@ -197,7 +198,7 @@ return [
 		'Form'		=> 'Collective\Html\FormFacade',
 		'Html'		=> 'Collective\Html\HtmlFacade',
 		'Image' 	=> 'Intervention\Image\Facades\Image',
-
+		'AWS' 		=> 'Aws\Laravel\AwsFacade',
 	],
 
 ];

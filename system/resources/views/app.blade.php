@@ -42,6 +42,8 @@
 						<li><a href="{{ url('/suppliers') }}">{{trans('menu.suppliers')}}</a></li>
 						<li><a href="{{ url('/receivings') }}">{{trans('menu.receivings')}}</a></li>
 						<li><a href="{{ url('/sales') }}">{{trans('menu.sales')}}</a></li>
+						<li><a href="{{ url('/photo/index') }}">List All</a></li>
+           				<li><a href="{{ url('/photo/create') }}">Upload New</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{trans('menu.reports')}} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">

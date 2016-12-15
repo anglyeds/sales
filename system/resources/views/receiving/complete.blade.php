@@ -1,4 +1,4 @@
-@extends('app')
+    @extends('app')
 @section('content')
 {!! Html::script('js/angular.min.js', array('type' => 'text/javascript')) !!}
 {!! Html::script('js/app.js', array('type' => 'text/javascript')) !!}

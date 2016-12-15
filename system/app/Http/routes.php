@@ -54,6 +54,12 @@ Route::group(['middleware' => 'languange'], function()
 	Route::post('store-item-kits', 'ItemKitController@storeItemKits');
 
 	Route::resource('tutapos-settings', 'TutaposSettingController');
+
+	Route::get('photo/index', 'PhotoController@index');
+	Route::get('photo/create', 'PhotoController@create');
+	Route::get('photo/edit', 'PhotoController@edit');
+	Route::post('photo/store', 'PhotoController@store');
+	Route::resource('photo', 'PhotoController');
 });
 /*
 Route::group(['middleware' => 'role'], function()

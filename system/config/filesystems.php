@@ -27,7 +27,7 @@ return [
 	| will be bound as the Cloud disk implementation in the container.
 	|
 	*/
-
+	
 	'cloud' => 's3',
 
 	/*
@@ -45,7 +45,7 @@ return [
 
 		'local' => [
 			'driver' => 'local',
-			'root'   => storage_path().'/app',
+      		'root'   => public_path('uploads'),
 		],
 
 		's3' => [
