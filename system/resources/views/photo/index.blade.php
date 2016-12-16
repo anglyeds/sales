@@ -6,7 +6,7 @@
     <table class="table striped">
     @foreach($photos as $photo)
             <tr>
-            <td><img class="img-responsive img-thumbnail" src="{!! $photo->get_photo('low') !!}" width="150" height="100"></td>
+            <td><img class="img-responsive img-thumbnail" src="{!! $photo->get_photo() !!}" width="150" height="100"></td>
             <td>{!! $photo->title !!}</td>
             <td>
                 {!! Form::open(['route' => array('photo.destroy', "{$photo->id}"), 'method' => 'delete']) !!}

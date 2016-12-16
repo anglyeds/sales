@@ -9,7 +9,7 @@ class Photo extends Model {
 
     protected $fillable = array('title', 'file');
     
-    public function get_photo($res = 'high') {
+    public function get_photo() {
         $msg = "wrong way";
         return $msg;
     }

@@ -49,23 +49,23 @@ class PhotoController extends Controller
      */
     public function store()
     {
-           
             $input = Input::all();
-            if ($this->photo->isValid($input)) {
+            
+            if ($this->photo->isValid($input) && !empty($img)) {
                 $mime = $input['file']->getMimeType();
                 $fileName = time() . "." . strtolower($input['file']->getClientOriginalExtension());
 
                 $image = Image::make($input['file']->getRealPath());
-                $this->upload_s3($image, $fileName, $mime, "high");
+                $this->upload_s3($image, $fileName, $mime, "resource/Original");
                 $image->resize(400, 300);
-                $this->upload_s3($image, $fileName, $mime, "low");
+                $this->upload_s3($image, $fileName, $mime, "resource/Thumbnail");
 
                 Photo::create([
                     'title' => Input::get('title'),
                     'file' => $fileName,
                 ]);
-                Session::flash('exito', 'Successed');
-                return Redirect::route('photo.store');
+                Session::flash('exito', $image);
+                return Redirect::route('photo.create');
             } else {
                 Session::flash('error', 'Failed');
                 return Redirect::back()->withInput()->withErrors($this->photo->messages);
@@ -108,6 +108,7 @@ class PhotoController extends Controller
     {
             //Get Input
             $input = Input::all();
+
             if ($this->photo->isValid($input)) {
                 $mime = $input['file']->getMimeType();
                 $fileName = time() . "." . strtolower($input['file']->getClientOriginalExtension());
@@ -117,14 +118,14 @@ class PhotoController extends Controller
 
                 //Delete Old from Bucket
                 $s3 = AWS::get('s3');
-                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "high/{$photo->file}"));
-                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "low/{$photo->file}"));
+                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
+                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
 
                 //Upload new files
                 $image = Image::make($input['file']->getRealPath());
-                $this->upload_s3($image, $fileName, $mime, "high");
+                $this->upload_s3($image, $fileName, $mime, "resource");
                 $image->resize(400, 300);
-                $this->upload_s3($image, $fileName, $mime, "low");
+                $this->upload_s3($image, $fileName, $mime, "resource");
 
                 $photo->file = $fileName;
                 $photo->save();
@@ -149,24 +150,22 @@ class PhotoController extends Controller
             
             //Delete object from S3 Bucket
             $s3 = AWS::get('s3');
-            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "high/{$photo->file}"));
-            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "low/{$photo->file}"));
+            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
+            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
                 
             $photo->delete();
             return Redirect::route('photo.index');
     }
         
         private function upload_s3($image, $fileName, $mime, $folder) {
-            $s3 = AWS::get('s3');
+            $s3 = AWS::createClient('s3');
             $s3->putObject(array(
                 'Bucket'     => 'anglyeds',
                 'Key'        => "{$folder}/{$fileName}",
                 'Body'       => "$image",
-                'ACL'        => 'public-read',
                 'ContentType' => $mime,
             ));
         }
-
 
         private $_data = array();
         private $path = "img/upload/";
