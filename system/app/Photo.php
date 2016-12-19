@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model {
 
     protected $fillable = array('title', 'file');
-    
-    public function get_photo() {
-        $msg = "wrong way";
-        return $msg;
+
+    public function get_photo($res = 'resource/Original') {
+        return "https://s3-ap-southeast-1.amazonaws.com/anglyeds/{$res}/{$this->file}";
     }
     
     public function isValid($input) {

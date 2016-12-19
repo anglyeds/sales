@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Photo;
 use Image;
 
-use \AWS;
+use AWS;
 
 class PhotoController extends Controller
 {
@@ -26,8 +26,10 @@ class PhotoController extends Controller
      */
     public function index()
     {
-            $this->_data['photos'] = Photo::all();
-            return view('photo.index')->with('photos',$this->_data);
+            $p = Photo::all();
+            return view('photo.index')
+                ->with('photos',$p);
+                
     }
 
 
@@ -49,9 +51,10 @@ class PhotoController extends Controller
      */
     public function store()
     {
-            $input = Input::all();
-            
-            if ($this->photo->isValid($input) && !empty($img)) {
+         $input = Input::all();
+
+            if ($this->photo->isValid($input)) {
+
                 $mime = $input['file']->getMimeType();
                 $fileName = time() . "." . strtolower($input['file']->getClientOriginalExtension());
 
@@ -64,8 +67,9 @@ class PhotoController extends Controller
                     'title' => Input::get('title'),
                     'file' => $fileName,
                 ]);
+
                 Session::flash('exito', $image);
-                return Redirect::route('photo.create');
+                return Redirect::route('photo.index');
             } else {
                 Session::flash('error', 'Failed');
                 return Redirect::back()->withInput()->withErrors($this->photo->messages);
@@ -94,7 +98,9 @@ class PhotoController extends Controller
     public function edit($id)
     {
             $this->_data['photo'] = Photo::find($id);
-            return view('photo.edit')->with('photos',$this->_data);
+
+            return view('photo.edit')
+                ->with('photos',$this->_data);
     }
 
 
@@ -159,6 +165,7 @@ class PhotoController extends Controller
         
         private function upload_s3($image, $fileName, $mime, $folder) {
             $s3 = AWS::createClient('s3');
+
             $s3->putObject(array(
                 'Bucket'     => 'anglyeds',
                 'Key'        => "{$folder}/{$fileName}",
