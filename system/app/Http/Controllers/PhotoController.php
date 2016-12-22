@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use \Auth, \Redirect, \Validator, \Input, \Session, \Response;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PhotoRequest;
 use App\Photo;
-use Image;
+use \Image;
+use \File;
 
 use AWS;
 
@@ -49,16 +51,18 @@ class PhotoController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(PhotoRequest $request)
     {
+
          $input = Input::all();
 
             if ($this->photo->isValid($input)) {
+                $img = $request->file('file');
 
                 $mime = $input['file']->getMimeType();
                 $fileName = time() . "." . strtolower($input['file']->getClientOriginalExtension());
-
-                $image = Image::make($input['file']->getRealPath());
+            
+                $image = Image::make(file_get_contents($img->getRealPath()));
                 $this->upload_s3($image, $fileName, $mime, "resource/Original");
                 $image->resize(400, 300);
                 $this->upload_s3($image, $fileName, $mime, "resource/Thumbnail");
@@ -166,12 +170,22 @@ class PhotoController extends Controller
         private function upload_s3($image, $fileName, $mime, $folder) {
             $s3 = AWS::createClient('s3');
 
-            $s3->putObject(array(
-                'Bucket'     => 'anglyeds',
-                'Key'        => "{$folder}/{$fileName}",
-                'Body'       => "$image",
-                'ContentType' => $mime,
-            ));
+            try{
+                 $s3->putObject(array(
+                    'Bucket'      => 'anglyeds',
+                    'Key'         => "{$folder}/{$fileName}",
+                    'Body'        => "$image",
+                    'ContentType' => $mime,
+                    'ACL'         => 'public-read',
+
+                            
+                ));   
+             } catch(S3Exception $e){
+                echo $e->getAwsErrorCode() . "\n";
+                // The bucket couldn't be created
+                echo $e->getMessage() . "\n";
+             }
+            
         }
 
         private $_data = array();

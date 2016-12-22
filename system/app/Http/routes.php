@@ -10,9 +10,18 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+
+Route::get('/', 'LandingController@country');
+Route::get('index', 'LandingController@index');
+
+Route::resource('hk', 'LandingController@countryhk');
+Route::resource('sg', 'LandingController@countrysg');
+Route::resource('id', 'LandingController@countryid');
+
 Route::group(['middleware' => 'languange'], function()
 {
-	Route::get('/', 'HomeController@index');
+	
 
 	Route::get('home', 'HomeController@index');
 
@@ -61,17 +70,12 @@ Route::group(['middleware' => 'languange'], function()
 	Route::post('photo/store', 'PhotoController@store');
 	Route::resource('photo', 'PhotoController');
 });
-/*
-Route::group(['middleware' => 'role'], function()
-    {
+
+Route::group(['middleware' => 'role'], function(){
         Route::get('items', function()
         {
             return 'Is admin';
         });
-    });
+});
 
-Route::get('sales', [  
-    'middleware' => 'role',
-    'uses' => 'SaleController@index'
-]);
-*/
+
