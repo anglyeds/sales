@@ -50,18 +50,18 @@ class LandingController extends Controller
     public function countryhk()
     {
         
-        return view('countryhk');
+        return view('landing.countryhk');
     }
 
     public function countrysg()
     {
         
-        return view('countrysg');
+        return view('landing.countrysg');
     }
 
     public function countryid()
     {
         
-        return view('countryid');
+        return view('landing.countryid');
     }
 }

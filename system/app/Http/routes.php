@@ -71,11 +71,11 @@ Route::group(['middleware' => 'languange'], function()
 	Route::resource('photo', 'PhotoController');
 });
 
-Route::group(['middleware' => 'role'], function(){
+/*Route::group(['middleware' => 'role'], function(){
         Route::get('items', function()
         {
             return 'Is admin';
         });
 });
-
+*/
 
