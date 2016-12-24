@@ -53,6 +53,7 @@
                     <li class=""><a href="#innovation">Innovation</a></li>
                     <li class=""><a href="#career">Career</a></li>
                     <li class=""><a href="#contact">Contact</a></li>
+                    <li class=""><a href="{{ url('/home') }}">Login</a></li>
                 </ul>         
             </nav>               
         </div>
