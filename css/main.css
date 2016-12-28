@@ -5,11 +5,11 @@
 1.	Typography
 2.	navigation-section
 3.	slider-section
-4.	Features-section
+4.	innovation-section
 5.	Description
 6.	Choose Color
-7.	Screenshots
-8.	video-section
+7.	career
+8.	network
 9.	Pricing-section
 10.	Review Section
 11.	ownload-app
@@ -242,8 +242,8 @@ textarea.form-control {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28ab95', endColorstr='#7bd1a0',GradientType=1 );
 }
 
-.whatsit h1, 
-.whatsit h2, 
+.about h1, 
+.about h2, 
 .section-title h1, 
 .feature h2, 
 #testimonial-slider .item h2, 
@@ -343,21 +343,21 @@ textarea.form-control {
 
 
 /*==============================
-=========whatsit-section=========
+=========about-section=========
 ================================*/
 
-.whatsit {
+.about {
 	padding: 30px 0 30px 30px;
     text-align: justify;
 }
 
-.whatsit h1 {
+.about h1 {
 	font-size:48px;
 	font-weight:700;
 	color:#43575d;
 }
 
-.whatsit h2 {
+.about h2 {
 	font-size:30px;
 	font-weight:300;
 	margin-bottom:25px;
@@ -367,10 +367,10 @@ textarea.form-control {
 
 
 /*===============================
-=========whats-special-section===
+=========services-section===
 ================================*/
 
-#whats-special {
+#services {
 	position:relative;
 	background-image:url(../images/landing/special-bg.jpg);
 	padding-bottom:0;
@@ -395,14 +395,14 @@ textarea.form-control {
 }
 
 /*================================
-=========compatibility-section====
+=========mediums-section====
 ================================*/
 
-.compatibility {
+.mediums {
 	padding:40px 0;
 }
 
-.compatibility .os {
+.mediums .os {
 	position:relative;
 }
 
@@ -410,33 +410,33 @@ textarea.form-control {
 	border-right:1px solid #dbdbdb;
 }
 
-.left-side .compatibility .os {
+.left-side .mediums .os {
 	padding-right:150px;
 }
 
-.right-side .compatibility .os {
+.right-side .mediums .os {
 	padding-left:150px;
 }
 
-.compatibility .os-image {
+.mediums .os-image {
 	position:absolute;
 	top:40px;
 }
 
-.left-side  .compatibility .os-image {
+.left-side  .mediums .os-image {
 	right:35px;
 }
 
-.right-side .compatibility .os-image {
+.right-side .mediums .os-image {
 	left:35px;
 }
 
-.compatibility h2 {
+.mediums h2 {
 	margin-bottom:15px;
 	color:#43575d;
 }
 
-.compatibility a{
+.mediums a{
 	color:#797877;
 	font-weight:600;
 	text-transform:uppercase;
@@ -446,15 +446,15 @@ textarea.form-control {
 	margin-top:10px;
 }
 
-.compatibility a:hover {
+.mediums a:hover {
 	color:#a0d48c;
 }
 
 /*================================
-=========video-section ====
+=========network ====
 ================================*/
 
-#video-section {
+#network {
 	background-image:url(../images/landing/video-bg.jpg);
 }
 
@@ -478,9 +478,9 @@ textarea.form-control {
 
 
 /*================================
-=========features-section ====
+=========innovation-section ====
 ================================*/
-#features {
+#innovation {
 	padding-bottom:35px;
 }
 
@@ -546,7 +546,7 @@ textarea.form-control {
 
 
 /*================================
-========= Screenshots Section ==========
+========= career Section ==========
 ================================*/
 #screenshot-slider {
 	margin-left:-7.5px;

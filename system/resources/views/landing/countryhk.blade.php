@@ -53,6 +53,7 @@
                     <li class=""><a href="#innovation">Innovation</a></li>
                     <li class=""><a href="#career">Career</a></li>
                     <li class=""><a href="#contact">Contact</a></li>
+                    <li class=""><a href="{{ url('/home') }}">Login</a></li>
                 </ul>         
             </nav>               
         </div>
@@ -63,7 +64,7 @@
 
 @section('about')
 
-<div id="whatsit" class="padding">
+<div id="about" class="padding">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.10s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-name: fadeInUp;">
@@ -84,7 +85,7 @@
 
 @section('services')
 
-<div id="whats-special" class="padding image-bg">
+<div id="services" class="padding image-bg">
 	<div class="overlay-bg"></div>
 	<div class="container">
 		<div class="text-center section-title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.10s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-	: fadeInUp;">
@@ -128,7 +129,7 @@
 
 @section('mediums')
 
-<div id="compatibility" class="padding">
+<div id="mediums" class="padding">
 	<div class="container">
 		<div class="section-title text-center wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-name: fadeInDown;">
 			<img class="img-responsive" src="images/icons/t2.png" alt="">
@@ -165,7 +166,7 @@
 
 @section('network')
 
-<div id="video-section" class="padding image-bg">
+<div id="network" class="padding image-bg">
 	<div class="overlay-bg"></div>
 	<div class="container text-center">
 		<div class="section-title wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-name: fadeInDown;">
@@ -183,7 +184,7 @@
 
 @section('innovation')
 
-<div id="features" class="padding">
+<div id="innovation" class="padding">
 	<div class="container">
 		<div class="row">
 			<div class="text-center section-title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-name: fadeInUp;">
@@ -252,7 +253,7 @@
 
 @section('career')
 
-<div id="screenshots" class="padding image-bg">
+<div id="career" class="padding image-bg">
 	<div class="overlay-bg"></div>
 		<div class="container">
 			<div class="text-center section-title  wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-name: fadeInDown;">
