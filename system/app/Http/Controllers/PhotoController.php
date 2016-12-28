@@ -19,8 +19,7 @@ class PhotoController extends Controller
     protected   $photo;
     public function __construct(Photo $photo) {
             $this->photo = $photo;
-        }
-    
+        }   
     /**
      * Display a listing of the resource.
      *
@@ -42,6 +41,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
+
             return view('photo.create')->with('photos',$this->_data);
     }
 
@@ -53,19 +53,19 @@ class PhotoController extends Controller
      */
     public function store(PhotoRequest $request)
     {
-
          $input = Input::all();
 
             if ($this->photo->isValid($input)) {
-                $img = $request->file('file');
 
                 $mime = $input['file']->getMimeType();
                 $fileName = time() . "." . strtolower($input['file']->getClientOriginalExtension());
             
-                $image = Image::make(file_get_contents($img->getRealPath()));
+                $image = Image::make($input['file']);
                 $this->upload_s3($image, $fileName, $mime, "resource/Original");
                 $image->resize(400, 300);
                 $this->upload_s3($image, $fileName, $mime, "resource/Thumbnail");
+
+                /*dd($img->getRealPath(), file_get_contents($img->getRealPath()));*/
 
                 Photo::create([
                     'title' => Input::get('title'),
@@ -128,8 +128,8 @@ class PhotoController extends Controller
 
                 //Delete Old from Bucket
                 $s3 = AWS::get('s3');
-                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
-                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
+                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Original/{$photo->file}"));
+                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Thumbnail/{$photo->file}"));
 
                 //Upload new files
                 $image = Image::make($input['file']->getRealPath());
@@ -174,7 +174,7 @@ class PhotoController extends Controller
                  $s3->putObject(array(
                     'Bucket'      => 'anglyeds',
                     'Key'         => "{$folder}/{$fileName}",
-                    'Body'        => "$image",
+                    'Body'        => (string) $image->encode(),  
                     'ContentType' => $mime,
                     'ACL'         => 'public-read',
 

@@ -48,7 +48,7 @@
                     <li class="active"><a href="#home-section">HOME</a></li>
                     <li class=""><a href="#about">About Us</a></li>
                     <li class=""><a href="#services">Services</a></li>
-                    <li class=""><a href="#medium">Mediums</a></li>
+                    <li class=""><a href="#mediums">Mediums</a></li>
                     <li class=""><a href="#network">Network</a></li>
                     <li class=""><a href="#innovation">Innovation</a></li>
                     <li class=""><a href="#career">Career</a></li>
@@ -66,18 +66,118 @@
 
 <div id="about" class="padding">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.10s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-name: fadeInUp;">
-				<img class="img-responsive" src="images/landing/about_us.jpg" alt="" width="500px" height="500px">
-			</div>
-			<div class="col-sm-6 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.20s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInUp;">
-				<div class="whatsit">
-					<h1>SYNERGY MARKETING (ASIA) LTD</h1>
-					<h2>YOUR PREFERRED IN-STORE MARKETING AND BRANDING PARTNER</h2>						
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum nulla pariatur. </p>
-				</div>						
-			</div>
-		</div>
+	  <div class="row">
+	    <div class="col-lg-12">
+	      <h3 class="text-center">Zigzag Timeline Layout (and Cats)</h3>
+	      <p>
+	        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	      </p>
+	      <ul class="timeline">
+	        <li>
+	          <div class="timeline-image">
+	            <img class="img-circle img-responsive" src="http://lorempixel.com/250/250/cats/1" alt="">
+	          </div>
+	          <div class="timeline-panel">
+	            <div class="timeline-heading">
+	              <h4>Step One</h4>
+	              <h4 class="subheading">Subtitle</h4>
+	            </div>
+	            <div class="timeline-body">
+	              <p class="text-muted">
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	              </p>
+	            </div>
+	          </div>
+	          <div class="line"></div>
+	        </li>
+	        <li class="timeline-inverted">
+	          <div class="timeline-image">
+	            <img class="img-circle img-responsive" src="http://lorempixel.com/250/250/cats/2" alt="">
+	          </div>
+	          <div class="timeline-panel">
+	            <div class="timeline-heading">
+	              <h4>Step Two</h4>
+	              <h4 class="subheading">Subtitle</h4>
+	            </div>
+	            <div class="timeline-body">
+	              <p class="text-muted">
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	              </p>
+	            </div>
+	          </div>
+	          <div class="line"></div>
+	        </li>
+	        <li>
+	          <div class="timeline-image">
+	            <img class="img-circle img-responsive" src="http://lorempixel.com/250/250/cats/3" alt="">
+	          </div>
+	          <div class="timeline-panel">
+	            <div class="timeline-heading">
+	              <h4>Step Three</h4>
+	              <h4 class="subheading">Subtitle</h4>
+	            </div>
+	            <div class="timeline-body">
+	              <p class="text-muted">
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	              </p>
+	            </div>
+	          </div>
+	          <div class="line"></div>
+	        </li>
+	        <li class="timeline-inverted">
+	          <div class="timeline-image">
+	            <img class="img-circle img-responsive" src="http://lorempixel.com/250/250/cats/4" alt="">
+	          </div>
+	          <div class="timeline-panel">
+	            <div class="timeline-heading">
+	              <h4>Step Three</h4>
+	              <h4 class="subheading">Subtitle</h4>
+	            </div>
+	            <div class="timeline-body">
+	              <p class="text-muted">
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	              </p>
+	            </div>
+	          </div>
+	          <div class="line"></div>
+	        </li>
+	        <li>
+	          <div class="timeline-image">
+	            <img class="img-circle img-responsive" src="http://lorempixel.com/250/250/cats/5" alt="">
+	          </div>
+	          <div class="timeline-panel">
+	            <div class="timeline-heading">
+	              <h4>Bonus Step</h4>
+	              <h4 class="subheading">Subtitle</h4>
+	            </div>
+	            <div class="timeline-body">
+	              <p class="text-muted">
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	              </p>
+	            </div>
+	          </div>
+	          <div class="line"></div>
+	        </li>
+	       <li class="timeline-inverted">
+	          <div class="timeline-image">
+	            <img class="img-circle img-responsive" src="http://lorempixel.com/250/250/cats/4" alt="">
+	          </div>
+	          <div class="timeline-panel">
+	            <div class="timeline-heading">
+	              <h4>Step Three</h4>
+	              <h4 class="subheading">Subtitle</h4>
+	            </div>
+	            <div class="timeline-body">
+	              <p class="text-muted">
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	              </p>
+	            </div>
+	          </div>
+	          
+	        </li>
+	      </ul> <!-- TimeLine -->
+	    </div> <!-- Col-12 -->
+	  </div> <!-- ROW -->
 	</div>
 </div><!--/#whatsit-->
 
@@ -261,26 +361,85 @@
 				<h1>Screenshot Gallery</h1>
 			</div>
 			<div id="screenshot-slider" class="owl-carousel owl-theme" style="display: block; opacity: 1;">
-				<div class="owl-wrapper-outer"><div class="owl-wrapper" style="display: block; width: 4230px; left: 0px; transition: all 0ms ease; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 235px;"><div class="screenshot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInUp;">
-					<a class="image-link" href="images/landing/screen1.jpg"><img class="img-responsive" src="images/landing/screen1.jpg" alt=""></a>
-				</div></div><div class="owl-item" style="width: 235px;"><div class="screenshot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInUp;">
-					<a class="image-link" href="images/landing/screen2.jpg"><img class="img-responsive" src="images/landing/screen2.jpg" alt=""></a>
-				</div></div><div class="owl-item" style="width: 235px;"><div class="screenshot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.4s; animation-name: fadeInUp;">
-					<a class="image-link" href="images/landing/screen3.jpg"><img class="img-responsive" src="images/landing/screen3.jpg" alt=""></a>
-				</div></div><div class="owl-item" style="width: 235px;"><div class="screenshot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
-					<a class="image-link" href="images/landing/screen4.jpg"><img class="img-responsive" src="images/landing/screen4.jpg" alt=""></a>
-				</div></div><div class="owl-item" style="width: 235px;"><div class="screenshot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
-					<a class="image-link" href="images/landing/screen2.jpg"><img class="img-responsive" src="images/landing/screen2.jpg" alt=""></a>
-				</div></div><div class="owl-item" style="width: 235px;"><div class="screenshot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.4s; animation-name: fadeInUp;">
-					<a class="image-link" href="images/landing/screen1.jpg"><img class="img-responsive" src="images/landing/screen1.jpg" alt=""></a>
-				</div></div><div class="owl-item" style="width: 235px;"><div class="screenshot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInUp;">
-					<a class="image-link" href="images/landing/screen4.jpg"><img class="img-responsive" src="images/landing/screen4.jpg" alt=""></a>
-				</div></div><div class="owl-item" style="width: 235px;"><div class="screenshot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInUp;">
-					<a class="image-link" href="images/landing/screen3.jpg"><img class="img-responsive" src="images/landing/screen3.jpg" alt=""></a>
-				</div></div><div class="owl-item" style="width: 235px;"><div class="screenshot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInUp;">
-					<a class="image-link" href="images/landing/screen1.jpg"><img class="img-responsive" src="images/landing/screen1.jpg" alt=""></a>
-				</div></div></div></div>									
-			<div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
+				<div class="owl-wrapper-outer">
+					<div class="owl-wrapper" style="display: block; width: 4230px; left: 0px; transition: all 0ms ease; transform: translate3d(0px, 0px, 0px);">
+						<div class="owl-item" style="width: 235px;">
+							<div class="career wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInUp;">
+								<a class="image-link" href="images/landing/screen1.jpg">
+								<img class="img-responsive" src="images/landing/screen1.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="owl-item" style="width: 235px;">
+							<div class="career wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInUp;">
+								<a class="image-link" href="images/landing/screen2.jpg">
+								<img class="img-responsive" src="images/landing/screen2.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="owl-item" style="width: 235px;">
+							<div class="career wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.4s; animation-name: fadeInUp;">
+								<a class="image-link" href="images/landing/screen3.jpg">
+								<img class="img-responsive" src="images/landing/screen3.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="owl-item" style="width: 235px;">
+							<div class="career wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
+								<a class="image-link" href="images/landing/screen4.jpg">
+								<img class="img-responsive" src="images/landing/screen4.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="owl-item" style="width: 235px;">
+							<div class="career wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
+								<a class="image-link" href="images/landing/screen2.jpg">
+								<img class="img-responsive" src="images/landing/screen2.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="owl-item" style="width: 235px;">
+						<div class="career wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.4s; animation-name: fadeInUp;">
+							<a class="image-link" href="images/landing/screen1.jpg">
+							<img class="img-responsive" src="images/landing/screen1.jpg" alt="">
+							</a>
+						</div>
+						</div>
+						<div class="owl-item" style="width: 235px;">
+							<div class="career wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInUp;">
+								<a class="image-link" href="images/landing/screen4.jpg"><img class="img-responsive" src="images/landing/screen4.jpg" alt=""></a>
+							</div>
+						</div>
+						<div class="owl-item" style="width: 235px;">
+						<div class="career wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInUp;">
+							<a class="image-link" href="images/landing/screen3.jpg">
+							<img class="img-responsive" src="images/landing/screen3.jpg" alt="">
+							</a>
+						</div>
+						</div>
+						<div class="owl-item" style="width: 235px;">
+							<div class="career wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInUp;">
+								<a class="image-link" href="images/landing/screen1.jpg">
+								<img class="img-responsive" src="images/landing/screen1.jpg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>									
+				<div class="owl-controls clickable">
+					<div class="owl-pagination">
+						<div class="owl-page active">
+							<span class=""></span>
+						</div>
+						<div class="owl-page">
+							<span class=""></span>
+						</div>
+						<div class="owl-page">
+							<span class=""></span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div><!--/screenshots-->
 
@@ -291,7 +450,7 @@
 	<div id="contact" class="padding">
 		<div class="container text-center">
 			<div class="section-title wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-name: fadeInDown;">
-				<img class="img-responsive" src="images/landing/t10.png" alt="">
+				<img class="img-responsive" src="images/icons/t10.png" alt="">
 				<h1>Send us a Message</h1>
 			</div>
 			<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="#">
