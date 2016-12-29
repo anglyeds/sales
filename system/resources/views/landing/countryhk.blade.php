@@ -6,10 +6,10 @@
 		<div class="container">
 			<div class="home-content padding">
 				<img class="img-responsive" src="images/landing/slider-logo.png" alt="">				
-				<h2>Explore the world through someone else's eyes.</h2>				
+				<h1>YOUR PREFERRED IN-STORE MARKETING AND BRANDING PARTNER</h1>				
 				<div class="button">
-					<a href="#" class="btn btn-primary btn-animated">Free Trail</a>
-					<a href="#" class="btn btn-primary btn-animated">Buy Now</a>
+					<a href="#" class="btn btn-primary btn-animated">Read About Us</a>
+					<a href="#" class="btn btn-primary btn-animated">Our Services</a>
 				</div>
 				<div class="app-icons text-center">
 					<ul class="list-inline">
@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#home-section">
 					<img class="main-logo img-responsive" src="images/landing/logo.png" alt="" width="80" height="80">
                 </a> 
 
@@ -65,12 +65,16 @@
 @section('about')
 
 <div id="about" class="padding">
+<div class="container">
+	  <div class="row">
+	  </div>
+</div>
 	<div class="container">
 	  <div class="row">
 	    <div class="col-lg-12">
-	      <h3 class="text-center">Zigzag Timeline Layout (and Cats)</h3>
+	      <h3 class="text-center">Our history</h3>
 	      <p>
-	        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	        Synergy Marketing (Asia) has come a long way since our inception in 2002 in Hong Kong. We have evolved to become a leading and preferred in-store marketing strategist. Combining industry expertise with creative and innovative solutions, we are able to develop and implement effective marketing and communications strategies to reach our clients’ targeted audience.
 	      </p>
 	      <ul class="timeline">
 	        <li>
@@ -190,19 +194,23 @@
 	<div class="container">
 		<div class="text-center section-title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.10s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-	: fadeInUp;">
 			<img class="img-responsive" src="images/icons/t1.png" alt="">
-			<h1>What’s Special</h1>
+			<h1>Our Services</h1>
 		</div>
 		<div class="special-features">
 			<div class="row"> 
 				<div class="col-sm-3">
 					<div class="special-content text-right wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInDown;">
-						<h2>For Business</h2>
+						<h2>In-store marketing and advertising solutions</h2>
 						<p>Sectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 					</div>
 					<div class="special-content text-right wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
-						<h2>Top Technology</h2>
+						<h2>In-store demonstration campaigns</h2>
 						<p>Ut enim ad minim veniam, quis nosexercitation ullaboris nisi ut aliquip ex ea commodo.</p>
 					</div>
+					<div class="special-content text-right wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
+						<h2>Events management </h2>
+						<p>Ut enim ad minim veniam, quis nosexercitation ullaboris nisi ut aliquip ex ea commodo.</p>
+					</div>					
 				</div>
 				<div class="col-sm-6">
 					<div class="special-image wow slideInUp" data-wow-duration="0.5s" data-wow-delay="0.7s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.7s; animation-name: slideInUp;">
@@ -211,14 +219,15 @@
 				</div>
 				<div class="col-sm-3">
 					<div class="special-content text-left wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInDown;">
-						<h2>Creative Design</h2>
+						<h2>Merchandising and shelf-management</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 					</div>
 					<div class="special-content text-left wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
-						<h2>Advanced Security</h2>
+						<h2>Marketing communications strategy and consultancy</h2>
 						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
 					</div>
 				</div>
+
 				
 			</div>
 		</div>
@@ -453,7 +462,7 @@
 				<img class="img-responsive" src="images/icons/t10.png" alt="">
 				<h1>Send us a Message</h1>
 			</div>
-			<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="#">
+			<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="mailto:selena@sma.hk">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="form-group wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInDown;">

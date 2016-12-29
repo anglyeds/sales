@@ -58,7 +58,7 @@ class PhotoController extends Controller
             if ($this->photo->isValid($input)) {
 
                 $mime = $input['file']->getMimeType();
-                $fileName = time() . "." . strtolower($input['file']->getClientOriginalExtension());
+                $fileName = Input::get('title'); //time() . "." . strtolower($input['file']->getClientOriginalExtension());
             
                 $image = Image::make($input['file']);
                 $this->upload_s3($image, $fileName, $mime, "resource/Original");
@@ -120,16 +120,16 @@ class PhotoController extends Controller
             $input = Input::all();
 
             if ($this->photo->isValid($input)) {
-                $mime = $input['file']->getMimeType();
-                $fileName = time() . "." . strtolower($input['file']->getClientOriginalExtension());
+                    $photo = Photo::find($id);
+                    $photo->title = Input::get('title');
 
-                $photo = Photo::find($id);
-                $photo->title = Input::get('title');
+                    $mime = $input['file']->getMimeType();
+                    $fileName = $photo->title;
 
                 //Delete Old from Bucket
-                $s3 = AWS::get('s3');
-                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Original/{$photo->file}"));
-                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Thumbnail/{$photo->file}"));
+                $s3 = AWS::createClient('s3');
+                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Original/{$photo->title}"));
+                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Thumbnail/{$photo->title}"));
 
                 //Upload new files
                 $image = Image::make($input['file']->getRealPath());
@@ -159,9 +159,9 @@ class PhotoController extends Controller
             $photo = Photo::find($id);
             
             //Delete object from S3 Bucket
-            $s3 = AWS::get('s3');
-            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
-            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
+            $s3 = AWS::createClient('s3');
+            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Original/{$photo->title}"));
+            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Thumbnail/{$photo->title}"));
                 
             $photo->delete();
             return Redirect::route('photo.index');
