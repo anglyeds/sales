@@ -28,17 +28,13 @@
         	
 			  <h2>Choose Country</h2>
 			  <div class="list-group">
-			  
-
-			    <a href="{{ url('/hk') }}" class="list-group-item"><span class="flag-icon flag-icon-gr"></span>Hong Kong</a>
-			    <a href="{{ url('/sg') }}" class="list-group-item"><span class="flag-icon flag-icon-gr flag-icon-squared"></span>Singapore</a>
+			    <a href="{{ url('/hk') }}" class="list-group-item">Hong Kong</a>
+			    <a href="{{ url('/sg') }}" class="list-group-item">Singapore</a>
 			    <a href="{{ url('/id') }}" class="list-group-item">Indonesia</a>
 			  </div>
 			
         </div>
     </div>
 </div>
-
-
 
 </body>

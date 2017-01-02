@@ -2,6 +2,7 @@
 
 @section('content')
 
+{!! Html::script('js/selfcreate.js', array('type' => 'text/javascript')) !!}
 {!! Html::script('js/angular.min.js', array('type' => 'text/javascript')) !!}
 {!! Html::script('js/item.kits.js', array('type' => 'text/javascript')) !!}
 <div class="container">
@@ -35,7 +36,7 @@
 
 					<div class="form-group">
 					{!! Form::label('description', trans('item.description')) !!}
-					{!! Form::textarea('description', Input::old('description'), array('class' => 'form-control')) !!}
+					{!! Form::textarea('description', Input::old('description'), array('class' => 'form-control','placeholder' => '', 'maxlength' => 250)) !!}
 					</div>
 
 					<div class="form-group">
@@ -45,17 +46,26 @@
 
 					<div class="form-group">
 					{!! Form::label('cost_price', trans('item.cost_price').' *') !!}
-					{!! Form::text('cost_price', Input::old('cost_price'), array('class' => 'form-control')) !!}
+					<!-- {!! Form::text('cost_price', Input::old('cost_price'), array('class' => 'form-control')) !!} -->
+						<div class="input-group">
+	                        <div class="input-group-addon">$</div>
+	                        <input type="text" class="form-control" name="cost_price" id="cost_price" onkeypress="return isNumberKey(event,id)" value="{{ old('cost_price') }}"/>
+	                    </div>
 					</div>
 
 					<div class="form-group">
 					{!! Form::label('selling_price', trans('item.selling_price').' *') !!}
-					{!! Form::text('selling_price', Input::old('selling_price'), array('class' => 'form-control')) !!}
+					<!-- {!! Form::text('selling_price', Input::old('selling_price'), array('class' => 'form-control')) !!} -->
+						<div class="input-group">
+	                        <div class="input-group-addon">$</div>
+	                        <input type="text" class="form-control" name="selling_price" id="selling_price" onkeypress="return isNumberKey(event,id)" value="{{ old('selling_price') }}"/>
+	                    </div>
 					</div>
 
 					<div class="form-group">
 					{!! Form::label('quantity', trans('item.quantity')) !!}
-					{!! Form::text('quantity', Input::old('quantity'), array('class' => 'form-control')) !!}
+					<!-- {!! Form::text('quantity', Input::old('quantity'), array('class' => 'form-control')) !!} -->
+					{!! Form::selectRange('quantity', 1, 10000, array('class' => 'form-control')) !!}
 					</div>
 
 					{!! Form::submit(trans('item.submit'), array('class' => 'btn btn-primary')) !!}

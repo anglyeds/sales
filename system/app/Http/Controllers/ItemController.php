@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Item;
+use App\landing;
 use App\Inventory;
 use App\Http\Requests\ItemRequest;
 use \Auth, \Redirect, \Validator, \Input, \Session;
@@ -95,6 +96,8 @@ class ItemController extends Controller {
 	public function show($id)
 	{
 		//
+
+		
 	}
 
 	/**

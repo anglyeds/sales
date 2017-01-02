@@ -19,7 +19,8 @@ class PhotoController extends Controller
     protected   $photo;
     public function __construct(Photo $photo) {
             $this->photo = $photo;
-        }   
+        }
+    
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +42,6 @@ class PhotoController extends Controller
      */
     public function create()
     {
-
             return view('photo.create')->with('photos',$this->_data);
     }
 
@@ -53,19 +53,19 @@ class PhotoController extends Controller
      */
     public function store(PhotoRequest $request)
     {
+
          $input = Input::all();
 
             if ($this->photo->isValid($input)) {
+                $img = $request->file('file');
 
                 $mime = $input['file']->getMimeType();
-                $fileName = Input::get('title'); //time() . "." . strtolower($input['file']->getClientOriginalExtension());
+                $fileName = time() . "." . strtolower($input['file']->getClientOriginalExtension());
             
-                $image = Image::make($input['file']);
+                $image = Image::make(file_get_contents($img->getRealPath()));
                 $this->upload_s3($image, $fileName, $mime, "resource/Original");
                 $image->resize(400, 300);
                 $this->upload_s3($image, $fileName, $mime, "resource/Thumbnail");
-
-                /*dd($img->getRealPath(), file_get_contents($img->getRealPath()));*/
 
                 Photo::create([
                     'title' => Input::get('title'),
@@ -120,16 +120,16 @@ class PhotoController extends Controller
             $input = Input::all();
 
             if ($this->photo->isValid($input)) {
-                    $photo = Photo::find($id);
-                    $photo->title = Input::get('title');
+                $mime = $input['file']->getMimeType();
+                $fileName = time() . "." . strtolower($input['file']->getClientOriginalExtension());
 
-                    $mime = $input['file']->getMimeType();
-                    $fileName = $photo->title;
+                $photo = Photo::find($id);
+                $photo->title = Input::get('title');
 
                 //Delete Old from Bucket
-                $s3 = AWS::createClient('s3');
-                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Original/{$photo->title}"));
-                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Thumbnail/{$photo->title}"));
+                $s3 = AWS::get('s3');
+                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
+                $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
 
                 //Upload new files
                 $image = Image::make($input['file']->getRealPath());
@@ -159,9 +159,9 @@ class PhotoController extends Controller
             $photo = Photo::find($id);
             
             //Delete object from S3 Bucket
-            $s3 = AWS::createClient('s3');
-            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Original/{$photo->title}"));
-            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/Thumbnail/{$photo->title}"));
+            $s3 = AWS::get('s3');
+            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
+            $s3->deleteObject(array('Bucket' => 'anglyeds','Key' => "resource/{$photo->file}"));
                 
             $photo->delete();
             return Redirect::route('photo.index');
@@ -174,7 +174,7 @@ class PhotoController extends Controller
                  $s3->putObject(array(
                     'Bucket'      => 'anglyeds',
                     'Key'         => "{$folder}/{$fileName}",
-                    'Body'        => (string) $image->encode(),  
+                    'Body'        => "$image",
                     'ContentType' => $mime,
                     'ACL'         => 'public-read',
 

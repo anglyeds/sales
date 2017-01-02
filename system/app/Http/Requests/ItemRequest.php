@@ -23,8 +23,8 @@ class ItemRequest extends Request {
 	{
 		return [
 			'item_name' => 'required',
-			'cost_price' => 'required',
-			'selling_price' => 'required',
+			'cost_price' => 'required|numeric',
+			'selling_price' => 'required|numeric',
 			'avatar' => 'mimes:jpeg,bmp,png'
 		];
 	}
