@@ -1,5 +1,7 @@
 @extends('app')
 
+
+{!! Html::script('js/selfcreate.js', array('type' => 'text/javascript')) !!}
 @section('content')
 <div class="container">
 	<div class="row">
@@ -39,17 +41,26 @@
 
 					<div class="form-group">
 					{!! Form::label('cost_price', trans('item.cost_price')) !!}
-					{!! Form::text('cost_price', null, array('class' => 'form-control')) !!}
+					<!-- {!! Form::text('cost_price', null, array('class' => 'form-control')) !!} -->
+						<div class="input-group">
+		                    <div class="input-group-addon">$</div>
+		                    <input type="text" class="form-control" name="cost_price" id="cost_price" onkeypress="return isNumberKey(event,id)" value="{{ old('cost_price') }}"/>
+	                    </div>
 					</div>
 
 					<div class="form-group">
 					{!! Form::label('selling_price', trans('item.selling_price')) !!}
-					{!! Form::text('selling_price', null, array('class' => 'form-control')) !!}
+						<div class="input-group">
+	                        <div class="input-group-addon">$</div>
+	                        <input type="text" class="form-control" name="selling_price" id="selling_price" onkeypress="return isNumberKey(event,id)" value="{{ old('selling_price') }}"/>
+	                    </div>
+					<!-- {!! Form::text('selling_price', null, array('class' => 'form-control')) !!} -->
 					</div>
 
 					<div class="form-group">
 					{!! Form::label('quantity', trans('item.quantity')) !!}
-					{!! Form::text('quantity', null, array('class' => 'form-control')) !!}
+					{!! Form::selectRange('quantity', 1, 10000, array('class' => 'form-control')) !!}
+					<!-- {!! Form::text('quantity', null, array('class' => 'form-control')) !!} -->
 					</div>
 
 					{!! Form::submit(trans('item.submit'), array('class' => 'btn btn-primary')) !!}

@@ -1,5 +1,7 @@
 @extends('app')
 
+
+{!! Html::script('js/selfcreate.js', array('type' => 'text/javascript')) !!}
 @section('content')
 <div class="container">
 	<div class="row">
@@ -13,7 +15,8 @@
 
 					<div class="form-group">
 					{!! Form::label('name', trans('customer.name') .' *') !!}
-					{!! Form::text('name', Input::old('name'), array('class' => 'form-control')) !!}
+					<!-- {!! Form::text('name', Input::old('name'), array('class' => 'form-control')) !!} -->
+					<input type="text" class="form-control" name="name" id="name" onkeyup="changeToUpperCase(this)" value="{{ old('name') }}"/>
 					</div>
 
 					<div class="form-group">
@@ -48,7 +51,7 @@
 
 					<div class="form-group">
 					{!! Form::label('zip', trans('customer.zip')) !!}
-					{!! Form::text('zip', Input::old('zip'), array('class' => 'form-control')) !!}
+					{!! Form::number('zip', Input::old('zip'), array('class' => 'form-control')) !!}
 					</div>
 
 					<div class="form-group">
@@ -60,6 +63,7 @@
 					{!! Form::label('account', trans('customer.account') .' #') !!}
 					{!! Form::text('account', Input::old('account'), array('class' => 'form-control')) !!}
 					</div>
+
 
 					{!! Form::submit(trans('customer.submit'), array('class' => 'btn btn-primary')) !!}
 

@@ -19,16 +19,20 @@ Route::resource('hk', 'LandingController@countryhk');
 Route::resource('sg', 'LandingController@countrysg');
 Route::resource('id', 'LandingController@countryid');
 
+Route::resource('/{title}/','LandingController@countryhk_item_details');
+
 Route::group(['middleware' => 'languange'], function()
 {
 	
-
 	Route::get('home', 'HomeController@index');
 
 	// Authentication routes...
 	Route::get('auth/login', 'Auth\AuthController@getLogin');
 	Route::post('auth/login', 'Auth\AuthController@postLogin');
 	Route::get('auth/logout', 'Auth\AuthController@getLogout');
+	Route::get('auth/register', 'Auth\AuthController@getRegister');
+	Route::post('auth/register', 'Auth\AuthController@postRegister');
+
 
 	// Password reset link request routes...
 	Route::get('password/email', 'Auth\PasswordController@getEmail');
@@ -71,11 +75,5 @@ Route::group(['middleware' => 'languange'], function()
 	Route::resource('photo', 'PhotoController');
 });
 
-/*Route::group(['middleware' => 'role'], function(){
-        Route::get('items', function()
-        {
-            return 'Is admin';
-        });
-});
-*/
+
 

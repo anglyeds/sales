@@ -199,6 +199,7 @@ return [
 		'Html'		=> 'Collective\Html\HtmlFacade',
 		'Image' 	=> 'Intervention\Image\Facades\Image',
 		'AWS' 		=> 'Aws\Laravel\AwsFacade',
+		'Input' 	=> 'Illuminate\Support\Facades\Input',
 	],
 
 ];

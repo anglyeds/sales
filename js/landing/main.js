@@ -127,6 +127,7 @@ jQuery(function ($) {
 		$('.video-link').magnificPopup({type:'iframe'});
 	}());
 	
+
 	
 	
 });
