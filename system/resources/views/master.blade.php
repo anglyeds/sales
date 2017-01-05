@@ -27,32 +27,28 @@
 	@section('home')
 	<div id="home-section" class="image-bg">
 	<nav id="mainmenu" class="collapse navbar-collapse navbar-rights" aria-expanded="false" style="float: right">         
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right">
         	@if (Auth::guest())
 				<li class=""><a href="{{ url('auth/register') }}">Register</a></li>
     			<li class=""><a href="{{ url('auth/login') }}">Login</a></li>
-			@else
-				<!-- <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+			@else                
+                <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} </a>
 					<ul class="dropdown-menu" role="menu">
+						<li><a href="{{ url('/home') }}">Manage Store</a></li>
 						<li><a href="{{ url('/tutapos-settings') }}">{{trans('menu.application_settings')}}</a></li>
 						<li class="divider"></li>
 						<li><a href="{{ url('/auth/logout') }}">{{trans('menu.logout')}}</a></li>
 					</ul>
-				</li> -->
-				<li><a href="#">{{ Auth::user()->name }}</a></li> 
-                <li><a href="{{ url('auth/logout') }}" class="logout_button">Logout</a></li>
+				</li>
                                   
             </ul>
-			@endif
-            
-            <!-- <li class=""><a href="{{ url('/home') }}">Login</a></li> -->
-        </ul>      
+			@endif           
     </nav> 
 		<div class="container">
 
 			<div class="home-content padding">
-				<img class="img-responsive" src="images/landing/slider-logo.jpg" width="120px" alt="">				
+				<img class="img-responsive" src="http://localhost/sales/images/landing/slider-logo.jpg" width="120px" alt="">				
 				<!-- <h2>Explore the world through someone else's eyes.</h2>				 -->
 				<!-- <div class="button">
 					<a href="#" class="btn btn-primary btn-animated">Free Trail</a>
@@ -66,9 +62,6 @@
 						<li><a href="#"><i class="fa fa-android"></i></a></li>
 					</ul>
 				</div> -->
-
-
-
 			</div>
 		</div>
 	</div>
@@ -95,56 +88,22 @@
             <!-- </div>  -->
             <nav id="mainmenu" class="collapse navbar-collapse navbar-lefts" aria-expanded="false">         
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ url('hk') }}">HOME</a></li>
+                    <li class=""><a href="{{ url('/hk') }}">HOME</a></li>
                     <li class=""><a href="{{ url('hk/about') }}">Category 1</a></li>
                     <li class=""><a href="{{ url('hk/about') }}">Category 2</a></li>
-                    <li class=""><a href="{{ url('hk/about') }}">Category 3</a></li>
-                    @if (Auth::check())
-						<li><a href="{{ url('/customers') }}">{{trans('menu.customers')}}</a></li>
-						<li><a href="{{ url('/items') }}">{{trans('menu.items')}}</a></li>
-						<li><a href="{{ url('/item-kits') }}">{{trans('menu.item_kits')}}</a></li>
-						<li><a href="{{ url('/suppliers') }}">{{trans('menu.suppliers')}}</a></li>
-						<li><a href="{{ url('/receivings') }}">{{trans('menu.receivings')}}</a></li>
-						<li><a href="{{ url('/sales') }}">{{trans('menu.sales')}}</a></li>
-						<li><a href="{{ url('/photo/index') }}">List All</a></li>
-           				<li><a href="{{ url('/photo/create') }}">Upload New</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{trans('menu.reports')}} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/reports/receivings') }}">{{trans('menu.receivings_report')}}</a></li>
-								<li><a href="{{ url('/reports/sales') }}">{{trans('menu.sales_report')}}</a></li>
-							</ul>
-						</li>
-						<li><a href="{{ url('/employees') }}">{{trans('menu.employees')}}</a></li>
-					@endif
+                    <li class=""><a href="{{ url('hk/about') }}">Category 3</a></li>                    
                     <li class="">                    	
 						<form action="{{ url('hk') }}">
 							<input type="text" placeholder="Search..." name="search_field" required class="search" value="{{Input::get('search_field')}}">
-	                        <input type="button" value="Search" class="button" name="search_btn" onclick="submit();">
+	                        <input type="button" value="Search" class="button" name="search_btn" onclick="submit();" style="height:38px">
 				        </form>
 					</li>
-                    <!-- <li class=""><a href="{{ url('hk/about') }}">About Us</a></li> -->
-                    <!-- <li class=""><a href="{{ url('hk/services') }}">Services</a></li>
-                    <li class=""><a href="{{ url('hk/mediums') }}">Mediums</a></li>
-                    <li class=""><a href="{{ url('hk/network') }}">Network</a></li>
-                    <li class=""><a href="{{ url('hk/innovation') }}">Innovation</a></li>
-                    <li class=""><a href="{{ url('hk/career') }}">Career</a></li> -->
-                    <!-- <li class=""><a href="{{ url('hk/contact') }}">Contact</a></li> -->
-                    <!-- <li class=""><a href="{{ url('/home') }}">Login</a></li> -->
                 </ul>         
-            </nav>  
-           
-
-            
-
-
-
+            </nav>
         </div>
     </div>
 </header>
-
 @endsection
-
 
 
 @section('about')
@@ -214,7 +173,7 @@
 
 @endsection
 
- @section('mediums')
+@section('mediums')
 
 <div id="compatibility" class="padding">
 	<div class="container">
@@ -380,7 +339,7 @@
 	<hr>
 		<div class="container text-center">
 			<div class="section-title wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.1s; animation-name: fadeInDown;">
-				<img class="img-responsive" src="images/landing/t10.png" alt="">
+				<img class="img-responsive" src="http://localhost/sales/images/landing/t10.png" alt="">
 				<h1>Send us a Message</h1>
 			</div>
 			<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="#">
@@ -447,7 +406,7 @@
 	@yield('innovation')
 	@yield('career') -->
 	@yield('content')
-	@yield('contact')
+	<!-- s@yield('contact') -->
 	@yield('footer')
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

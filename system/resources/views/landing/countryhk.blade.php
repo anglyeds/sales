@@ -55,7 +55,7 @@
 
                               <!-- <form action="{{ url('landing.countryhk/'.$item->avatar) }}" method="POST"> -->
                                 
-                                <a href="{{ url('/'.$item->item_name) }}" target="_blank">
+                                <a href="{{ url('/hk/'.$item->item_name) }}" target="_blank">
                                 <img style="border:#ffdab3 1px solid; position: relative" src="http://localhost/Sales/system/public/images/items/{{$item->avatar}}" width="200" height="230" /></a>
                                     
                                  <!--    <input type="hidden" name="_method" value="PUT">
